@@ -10,14 +10,15 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "babel-runtime": "^6.25.0",
+    "front-matter": "^2.3.0",
+    "marked": "^0.3.6",
     "quasar-extras": "0.x",
     "quasar-framework": "^0.14.6",
     "vue": "^2.5.2",
+    "vue-analytics": "^5.8.0",
     "vue-router": "^2.7.0",
-    "axios": "^0.17.1",
-    "front-matter": "^2.3.0",
-    "marked": "^0.3.6",
     "vueisotope": "^3.1.1"
   },
   "devDependencies": {

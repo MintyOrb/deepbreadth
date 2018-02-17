@@ -13,6 +13,12 @@ require(`quasar/dist/quasar.${__THEME}.css`)
 import Vue from 'vue'
 import Quasar from 'quasar'
 import router from './router'
+import VueAnalytics from 'vue-analytics'
+
+Vue.use(VueAnalytics, {
+  id: 'UA-50613674-5',
+  router
+})
 
 Vue.config.productionTip = false
 Vue.use(Quasar) // Install Quasar Framework
