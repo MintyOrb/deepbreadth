@@ -16,6 +16,7 @@
   import axios from 'axios'
   import fm from 'front-matter'
   import marked from 'marked'
+  import tippy from 'tippy.js'
 
   export default {
     name: 'articleView',
@@ -33,6 +34,7 @@
     created () {
       this.findArticle()
       this.loadPost()
+      // this.loadTestmd()
     },
 
     methods: {
@@ -48,13 +50,34 @@
             let text = this.decode(response.data.content)
             const content = fm(text)
             this.detail = content.attributes
+
             this.content = marked(content.body)
+            Vue.compile(this.content)
+            this.initPopovers()
             // Set window title
             window.document.title = this.detail.title
           })
           .catch(err => {
             console.error('[getDetail]', err)
             this.$router.replace('/')
+          })
+      },
+
+      initPopovers () {
+        this.$nextTick(() => {
+          tippy('.aside', {
+            animation: 'scale',
+            arrow: true
+          })
+        })
+      },
+
+      loadTestmd () {
+        axios.get('statics/test.md')
+          .then(response => {
+            const content = fm(response.data)
+            this.content = marked(content.body)
+            this.initPopovers()
           })
       },
 
@@ -93,11 +116,28 @@ img {
   margin-left:auto;
   margin-right:auto;
 }
+@media (max-width: 600px) {
+  img {
+    max-width: 100%;
+  }
+}
 article {
   max-width: 700px;
   margin: 0 auto;
 }
 .post-view {
   margin: 20px;
+}
+
+.caption {
+  text-align: center;
+  font-size: 0.7em;
+  margin: 0 auto;
+  width: 80%;
+  display: block;
+  line-height: 1.4;
+}
+.aside {
+  color: red;
 }
 </style>

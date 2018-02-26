@@ -53,6 +53,8 @@
 }
 .card {
   padding-bottom: 20px;
+  width: calc(50% - 16px);
+  word-break: break-word;
 }
 .grow {
   transition: all .3s;
@@ -69,8 +71,5 @@ span a {
   flex-direction: column;
   align-items: center;
   padding: 40px;
-}
-.card {
-  width: 324px;
 }
 </style>

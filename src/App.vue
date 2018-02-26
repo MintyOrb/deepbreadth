@@ -14,7 +14,6 @@
       <div style="clear: both"></div>
 
       <div class='subtitle'>
-        <!-- some of everything. -->
         big pictures, thresholds, and cross sections.
       </div>
 
@@ -67,14 +66,15 @@ h2 {
   font-size: 2.4rem;
   margin:0;
 }
-h4 {
-  font-size: 1.2rem;
-  margin:0;
-}
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin-bottom: -2px;
 }
+h4 {
+  font-size: 1.4rem;
+  margin:0;
+}
+
 p {
   font-size: 1.2rem;
   line-height: auto;
@@ -89,7 +89,8 @@ ol li {
 }
 .limited {
   position: relative;
-  max-width: 700px;
+  max-width: 100vw;
+  width: 700px;
   margin: 0 auto;
 }
 #app {
