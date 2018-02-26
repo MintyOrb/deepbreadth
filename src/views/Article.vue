@@ -50,9 +50,7 @@
             let text = this.decode(response.data.content)
             const content = fm(text)
             this.detail = content.attributes
-
             this.content = marked(content.body)
-            Vue.compile(this.content)
             this.initPopovers()
             // Set window title
             window.document.title = this.detail.title
